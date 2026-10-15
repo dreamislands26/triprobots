@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-label="TRIPROBOTS">
-  <rect x="0" y="16" width="88" height="88" rx="10" fill="#AFC4FF"/>
-  <g fill="#0A1424">
-    <path d="M24 36h13v18h24v12H37v25H24V66H14V54h10V36z"/>
-    <path d="M53 54h13v8c5-7 12-10 21-9v13c-9-1-15 1-21 7v18H53V54z"/>
-    <rect x="72" y="31" width="8" height="8" rx="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="TRIPROBOTS">
+  <rect width="1080" height="1080" fill="#4D7CFF"/>
+  <rect x="226" y="326" width="628" height="430" rx="50" fill="#FFFFFF"/>
+  <g fill="#4D7CFF">
+    <path d="M331 386h63v67h181v47H394v116c0 22 4 33 13 40 10 8 25 10 47 10 10 0 21-1 32-3v50c-18 4-36 6-54 6-34 0-59-8-76-24-17-16-25-40-25-72V500h-42v-47h42v-67z"/>
+    <path d="M520 453h55v42c17-29 46-43 91-42v55c-33-2-57 6-72 24-13 15-19 35-19 61v102h-55V453z"/>
+    <rect x="729" y="386" width="62" height="60" rx="2"/>
   </g>
-  <text x="118" y="83" fill="#AFC4FF" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="500" letter-spacing="-2">triprobots</text>
 </svg>
