@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">Состав команды проекта внедрения ИИ-агента</title>
+<desc id="desc">В центре постоянная команда TRIPROBOTS и эксперт заказчика. Вокруг ИТ-служба, служба безопасности, поставщики 1С и CRM и общий список задач.</desc>
+<rect width="1200" height="680" rx="36" fill="#07111f"/>
+<text x="58" y="72" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="700">Команда проекта внедрения ИИ-агента</text>
+<text x="58" y="108" fill="#aebbd0" font-family="Inter,Arial,sans-serif" font-size="18">Постоянная команда ведёт проект от аудита до масштабирования</text>
+<g stroke="#4d7cff" stroke-width="3" fill="none" opacity=".9">
+<path d="M600 330 C430 270 330 235 245 210"/><path d="M600 330 C770 270 870 235 955 210"/><path d="M600 330 C420 395 320 440 235 490"/><path d="M600 330 C780 395 880 440 965 490"/>
+</g>
+<g font-family="Inter,Arial,sans-serif">
+<rect x="410" y="230" width="380" height="205" rx="30" fill="#10284a" stroke="#4d7cff" stroke-width="3"/>
+<text x="600" y="285" text-anchor="middle" fill="#8fa8ff" font-size="17" font-weight="700">ПОСТОЯННАЯ КОМАНДА</text>
+<text x="600" y="335" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="800">TRIPROBOTS + эксперт заказчика</text>
+<text x="600" y="375" text-anchor="middle" fill="#c8d3e5" font-size="18">Процесс · метрики · база знаний · пилот</text>
+<rect x="484" y="395" width="232" height="30" rx="15" fill="#4d7cff" opacity=".18"/>
+<text x="600" y="416" text-anchor="middle" fill="#dce6ff" font-size="15" font-weight="700">единая ответственность за результат</text>
+<g>
+<rect x="70" y="150" width="300" height="128" rx="24" fill="#0d1b2e" stroke="#34445d"/>
+<text x="100" y="194" fill="#8fa8ff" font-size="16" font-weight="700">01</text><text x="100" y="230" fill="#ffffff" font-size="24" font-weight="700">ИТ-служба</text><text x="100" y="258" fill="#aebbd0" font-size="16">Доступы, инфраструктура, API</text>
+</g>
+<g>
+<rect x="830" y="150" width="300" height="128" rx="24" fill="#0d1b2e" stroke="#34445d"/>
+<text x="860" y="194" fill="#8fa8ff" font-size="16" font-weight="700">02</text><text x="860" y="230" fill="#ffffff" font-size="24" font-weight="700">Безопасность</text><text x="860" y="258" fill="#aebbd0" font-size="16">Права, правила, подтверждения</text>
+</g>
+<g>
+<rect x="70" y="430" width="300" height="128" rx="24" fill="#0d1b2e" stroke="#34445d"/>
+<text x="100" y="474" fill="#8fa8ff" font-size="16" font-weight="700">03</text><text x="100" y="510" fill="#ffffff" font-size="24" font-weight="700">Поставщики 1С / CRM</text><text x="100" y="538" fill="#aebbd0" font-size="16">Нестандартные настройки систем</text>
+</g>
+<g>
+<rect x="830" y="430" width="300" height="128" rx="24" fill="#0d1b2e" stroke="#34445d"/>
+<text x="860" y="474" fill="#8fa8ff" font-size="16" font-weight="700">04</text><text x="860" y="510" fill="#ffffff" font-size="24" font-weight="700">Общий список задач</text><text x="860" y="538" fill="#aebbd0" font-size="16">Что в работе, готово и дальше</text>
+</g>
+<text x="600" y="620" text-anchor="middle" fill="#9fb0c9" font-size="16">В небольшом проекте один человек может совмещать несколько ролей</text>
+</g>
+</svg>
