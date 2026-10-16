@@ -1,0 +1,41 @@
+<svg font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFF6EA"/>
+<defs><pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.6" fill="#C9B79C" opacity=".35"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots)"/>
+<text x="540.0" y="76" fill="#1E2240" font-size="56" font-weight="800" text-anchor="middle">Робо-матрёшка ИИ</text>
+<text x="540.0" y="118" fill="#4A4E6A" font-size="25" text-anchor="middle">Каждый термин — внутри предыдущего</text>
+<line x1="540" x2="540" y1="280.61" y2="219.61" stroke="#1E2240" stroke-linecap="round" stroke-width="7"/>
+<circle cx="540" cy="215.61" r="15" fill="#39E5D3" stroke="#1E2240" stroke-width="4"/>
+<ellipse cx="540" cy="1243" rx="250" ry="16" opacity=".1"/>
+<path d="m312 1235c-120-250-96-560 66-680a186 186 0 1 1 324 0c162 120 186 430 66 680z" fill="#D7263D" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<text x="540" y="311.6" fill="#FFFFFF" font-size="19" font-weight="800" text-anchor="middle">Искусственный</text>
+<text x="540" y="335.6" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">интеллект</text>
+<path d="m333.9 1223c-108.5-226-86.8-506.2 59.7-614.7a168.1 168.1 0 1 1 292.8 0c146.5 108.5 168.2 388.7 59.7 614.7z" fill="#F46036" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<text x="540" y="391.5" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">Машинное</text>
+<text x="540" y="415.5" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">обучение</text>
+<path d="m355.8 1211c-97-202-77.6-452.5 53.3-549.4a150.3 150.3 0 1 1 261.8 0c130.9 96.9 150.3 347.4 53.3 549.4z" fill="#F2A900" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<text x="540" y="485.4" fill="#1E2240" font-size="20" font-weight="800" text-anchor="middle">Нейронные сети</text>
+<path d="m377.7 1199c-85.5-178-68.4-398.7 47-484.2a132.4 132.4 0 1 1 230.6 0c115.4 85.5 132.5 306.2 47 484.2z" fill="#2E9E5B" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<text x="540" y="551.3" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">Глубокое</text>
+<text x="540" y="575.3" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">обучение</text>
+<path d="m399.6 1187c-74-154-59.2-345 40.6-418.9a114.6 114.6 0 1 1 199.6 0c99.8 73.9 114.6 264.9 40.6 418.9z" fill="#1B998B" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<text x="540" y="631.2" fill="#FFFFFF" font-size="19" font-weight="800" text-anchor="middle">Генеративный</text>
+<text x="540" y="655.2" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">ИИ</text>
+<path d="m421.4 1175c-62.4-130-49.9-291.2 34.4-353.6a96.7 96.7 0 1 1 168.4 0c84.3 62.4 96.8 223.6 34.4 353.6z" fill="#2E6FDB" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<text x="540" y="711.2" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">Языковые</text>
+<text x="540" y="735.2" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">модели (LLM)</text>
+<path d="m443.3 1163c-50.9-106-40.7-237.4 28-288.3a78.9 78.9 0 1 1 137.4 0c68.7 50.9 78.9 182.3 28 288.3z" fill="#6C4AB6" stroke="#1E2240" stroke-linejoin="round" stroke-width="4"/>
+<circle cx="540" cy="836.1" r="63.6" fill="#fff" opacity=".25"/>
+<circle cx="480.9" cy="812.7" r="5" fill="#FFF6EA"/><circle cx="488.1" cy="799.4" r="5" fill="#FFF6EA"/><circle cx="498.2" cy="788.1" r="5" fill="#FFF6EA"/><circle cx="510.8" cy="779.6" r="5" fill="#FFF6EA"/><circle cx="525" cy="774.3" r="5" fill="#FFF6EA"/><circle cx="540" cy="772.5" r="5" fill="#FFF6EA"/><circle cx="555" cy="774.3" r="5" fill="#FFF6EA"/><circle cx="569.2" cy="779.6" r="5" fill="#FFF6EA"/><circle cx="581.8" cy="788.1" r="5" fill="#FFF6EA"/><circle cx="591.9" cy="799.4" r="5" fill="#FFF6EA"/><circle cx="599.1" cy="812.7" r="5" fill="#FFF6EA"/>
+<circle cx="540" cy="836.1" r="49.6" fill="#FFF1DE" stroke="#1E2240" stroke-width="4"/>
+<rect x="503.1" y="808.5" width="73.8" height="29.7" rx="14.8" fill="#1E2240"/>
+<circle cx="521.7" cy="823.4" r="8.1" fill="#39E5D3"/><circle cx="524.7" cy="820.4" r="3" fill="#fff"/><circle cx="509.5" cy="850.9" r="10.2" fill="#FF7A90" opacity=".8"/><circle cx="558.3" cy="823.4" r="8.1" fill="#39E5D3"/><circle cx="561.3" cy="820.4" r="3" fill="#fff"/><circle cx="570.5" cy="850.9" r="10.2" fill="#FF7A90" opacity=".8"/>
+<rect x="522.2" y="855.2" width="5.1" height="9.3" rx="2" fill="#1E2240"/><rect x="529.8" y="855.2" width="5.1" height="9.3" rx="2" fill="#1E2240"/><rect x="537.5" y="855.2" width="5.1" height="9.3" rx="2" fill="#1E2240"/><rect x="545.1" y="855.2" width="5.1" height="9.3" rx="2" fill="#1E2240"/><rect x="552.7" y="855.2" width="5.1" height="9.3" rx="2" fill="#1E2240"/>
+<ellipse cx="540" cy="1031.6" rx="86.5" ry="97.5" fill="#FFF6EA" stroke="#1E2240" stroke-width="4"/>
+<line x1="557.8" x2="574.3" y1="997.6" y2="997.6" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="574.3" cy="997.6" r="5" fill="#6C4AB6"/><line x1="552.6" x2="564.3" y1="1010.2" y2="1021.9" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="564.3" cy="1021.9" r="5" fill="#6C4AB6"/><line x1="540" x2="540" y1="1015.4" y2="1032" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="540" cy="1032" r="5" fill="#6C4AB6"/><line x1="527.4" x2="515.7" y1="1010.2" y2="1021.9" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="515.7" cy="1021.9" r="5" fill="#6C4AB6"/><line x1="522.2" x2="505.7" y1="997.6" y2="997.6" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="505.7" cy="997.6" r="5" fill="#6C4AB6"/><line x1="527.4" x2="515.7" y1="985" y2="973.4" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="515.7" cy="973.4" r="5" fill="#6C4AB6"/><line x1="540" x2="540" y1="979.8" y2="963.3" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="540" cy="963.3" r="5" fill="#6C4AB6"/><line x1="552.6" x2="564.3" y1="985" y2="973.4" stroke="#6C4AB6" stroke-linecap="round" stroke-width="4"/><circle cx="564.3" cy="973.4" r="5" fill="#6C4AB6"/>
+<rect x="527.3" y="984.9" width="25.4" height="25.4" rx="5" fill="#1E2240"/>
+<text x="540" y="1050.6" fill="#1E2240" font-size="24" font-weight="800" text-anchor="middle">Модель</text>
+<text x="540" y="1074.0" fill="#4A4E6A" font-size="15" font-weight="600" text-anchor="middle">GPT-5 · Claude</text>
+<text x="540" y="1090.9" fill="#4A4E6A" font-size="15" font-weight="600" text-anchor="middle">и другие</text>
+<text x="540.0" y="1290" fill="#4A4E6A" font-size="22" text-anchor="middle">А снаружи работает <tspan fill="#1E2240" font-weight="800">ИИ-агент</tspan> — в ваших 1С, CRM и почте</text>
+<text x="540.0" y="1326" fill="#2E6FDB" font-size="19" font-weight="700" text-anchor="middle">triprobots.ru</text>
+</svg>
