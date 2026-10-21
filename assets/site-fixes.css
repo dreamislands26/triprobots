@@ -1,0 +1,25 @@
+/* Homepage visual corrections */
+#team .team-grid{align-items:stretch}
+#team .team-grid article:nth-child(1){order:1}
+#team .team-grid article:nth-child(3){order:2}
+#team .team-grid article:nth-child(2){order:3}
+#team .team-grid .avatar{background-size:cover!important;background-position:center!important;color:transparent!important;overflow:hidden}
+#team .team-grid article:nth-child(1) .avatar{background-image:url('/assets/team/mark-semenov.jpg')!important}
+#team .team-grid article:nth-child(2) .avatar{background-image:url('/assets/team/anastasia-ignatenko.jpg')!important}
+#team .team-grid article:nth-child(3) .avatar{background-image:url('/assets/team/oleg-salnikov.jpg')!important}
+#team .team-grid article:nth-child(2) .role,#team .team-grid article:nth-child(3) .role{font-size:0}
+#team .team-grid article:nth-child(2) .role::after{content:'Руководитель проектов';font-size:16px}
+#team .team-grid article:nth-child(3) .role::after{content:'Со-основатель, руководитель продукта';font-size:16px}
+#team .team-grid article:nth-child(1) a>p:not(.role),#team .team-grid article:nth-child(3)>p:not(.role){font-size:0}
+#team .team-grid article:nth-child(1) a>p:not(.role)::after,#team .team-grid article:nth-child(3)>p:not(.role)::after{content:'ex Huawei';display:inline-block;font-size:14px;font-weight:700;color:#657086;border:1px solid #dce3ef;border-radius:999px;padding:6px 10px;margin-top:2px}
+
+/* R&D: keep it subordinate to the main content */
+body:has(main#top)>footer::before{width:min(1120px,calc(100% - 64px))!important;height:215px!important;margin:0 auto 28px!important;padding:30px 34px!important;border-radius:22px!important;font-size:clamp(24px,2.2vw,32px)!important;font-weight:750!important;line-height:1.1!important;box-shadow:none!important;border:1px solid rgba(220,227,239,.9)!important;background-position:25% 72%,76% 70%!important;background-size:190px auto,145px auto!important}
+
+/* Community status: compact footer proof point */
+body:has(main#top)>footer::after{content:'Участник';display:block;width:min(1120px,calc(100% - 64px));height:92px;margin:28px auto 0;padding:0 0 0 205px;box-sizing:border-box;background:url('/assets/partners/global-ai-community.svg') left center/180px auto no-repeat;color:#98a7bf;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:92px;border-top:1px solid rgba(255,255,255,.08)}
+
+@media(max-width:680px){
+  body:has(main#top)>footer::before{width:calc(100% - 32px)!important;height:265px!important;padding:24px!important;font-size:25px!important;background-position:50% 59%,50% 86%!important;background-size:165px auto,118px auto!important}
+  body:has(main#top)>footer::after{width:calc(100% - 32px);height:105px;margin-top:20px;padding:72px 0 0;background-position:center top;background-size:165px auto;text-align:center;line-height:1.2}
+}
