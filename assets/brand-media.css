@@ -1,0 +1,37 @@
+/* Logos retain their supplied colors, geometry and intrinsic aspect ratio. */
+.brand-logo,.footer-logo {
+  background:var(--white); border-radius:6px; padding:8px;
+  height:auto; max-height:none; object-fit:contain; filter:none; mix-blend-mode:normal;
+}
+#team::after { content:none!important; display:none!important; }
+#team .team-grid .role { font-size:15px; }
+#team .team-grid .role::before,#team .team-grid .role::after { content:none!important; display:none!important; }
+#team .huawei-brand {
+  display:flex; align-items:center; gap:10px; width:fit-content; margin:18px 28px 0;
+  padding:10px 16px; background:var(--white); color:var(--navy); border-radius:10px;
+}
+.huawei-brand img { display:block; width:42px; height:42px; object-fit:contain; }
+.huawei-brand span { font:700 14px var(--sans); letter-spacing:.04em; }
+#team .rd-brand-panel {
+  background:var(--white); color:var(--navy); border-radius:24px; padding:32px; margin-top:40px;
+}
+#team .rd-brand-panel h3 { color:var(--navy); font-size:clamp(22px,2.5vw,30px); line-height:1.25; }
+.rd-brand-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; gap:32px; margin-top:28px; }
+.partner-brand { display:grid; place-items:center; min-width:0; min-height:140px; padding:16px; background:var(--white); }
+.partner-brand img { display:block; max-width:100%; width:240px; height:110px; object-fit:contain; filter:none; mix-blend-mode:normal; }
+.partner-brand:last-child img { width:140px; height:140px; }
+.sector-photo { margin:0 0 24px; min-width:0; }
+.sector-photo img { display:block; width:100%; height:auto; aspect-ratio:28/15; object-fit:cover; border-radius:16px; }
+.sector-photo figcaption { font:400 12px var(--sans); color:var(--muted); margin-top:8px; }
+.home-lob-card .sector-photo { margin-bottom:24px; }
+.product-photo img { object-fit:contain; background:var(--white); padding:20px; }
+.sector-intro { margin-top:32px; }
+.sector-intro .sector-photo { max-width:100%; margin-bottom:0; }
+.sector-intro .sector-photo img { max-height:480px; }
+@media(max-width:680px) {
+  .rd-brand-grid { grid-template-columns:1fr; gap:8px; margin-top:20px; }
+  #team .rd-brand-panel { padding:24px; }
+  #team .huawei-brand { margin-left:22px; }
+  .partner-brand { padding:12px; min-height:120px; }
+  .sector-intro { margin-top:20px; }
+}
