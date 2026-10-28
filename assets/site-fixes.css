@@ -24,7 +24,6 @@
 #team .team-grid article:nth-child(1) a>p:not(.role),#team .team-grid article:nth-child(3)>p:not(.role){display:block;color:var(--dark-muted)}
 #team .team-grid article:nth-child(2)>p:not(.role){color:var(--dark-muted);line-height:1.55;margin-top:18px}
 #team .team-grid .text-link{display:inline-block;margin-top:18px;color:var(--dark-muted)}
-#team .team-grid article:nth-child(1) .role::after,#team .team-grid article:nth-child(3) .role::after{content:'Опыт: Expedia, Huawei';display:flex;align-items:center;width:max-content;height:34px;margin-top:14px;padding-left:40px;background:url('/assets/team/huawei.svg?v=20261022-1') left center/28px 28px no-repeat;color:var(--paper);font-size:14px;font-weight:700;letter-spacing:.01em}
 
 /* Remove the old oversized R&D pseudo-block from the footer. */
 body:has(main#top)>footer::before{content:none!important;display:none!important}

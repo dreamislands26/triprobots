@@ -5,6 +5,16 @@
   const status = document.getElementById('formStatus');
   const fileInput = document.getElementById('trFile');
   const maxBytes = 5 * 1024 * 1024;
+  let trialEndpoint = null;
+  const configuration = fetch('/data/form-config.json', {cache:'no-store'}).then(r=>r.ok?r.json():{}).then(config=>{
+    if(config.endpoint){
+      const url = new URL(config.endpoint, location.origin);
+      if(url.protocol === 'https:'){
+        trialEndpoint = url.href;form.action=trialEndpoint;form.method='post';
+        const note=document.getElementById('trialDeliveryNote');if(note)note.textContent='Файл будет отправлен вместе с заявкой. До 5 МБ.';
+      }
+    }
+  }).catch(()=>{});
   fileInput.addEventListener('change', () => {
     fileInput.setCustomValidity(fileInput.files[0]?.size > maxBytes ? 'Выберите файл до 5 МБ.' : '');
     fileInput.reportValidity();
@@ -22,6 +32,31 @@
     const subject = 'Бесплатная проба TRIPROBOTS' + (data.get('solution') ? ` · ${data.get('solution')}` : '');
     const text = ['Имя: ' + data.get('name'), 'Контакт: ' + data.get('contact'), 'Компания: ' + (data.get('company') || '—'), 'Направление: ' + data.get('area'), 'Решение: ' + (data.get('solution') || 'не выбрано'), '', data.get('message') || '', '', form.dataset.calculation || ''].join('\n');
     const file = fileInput.files[0];
+    await configuration;
+    if (trialEndpoint) {
+      if(file?.size > maxBytes){status.textContent='Выберите файл до 5 МБ.';return;}
+      const button=form.querySelector('[type=submit]');button.disabled=true;
+      status.textContent='Отправляем заявку…';
+      try {
+        form.dataset.requestId ||= crypto.randomUUID();
+        const payload=Object.fromEntries(['name','contact','company','area','message','solution'].map(key=>[key,data.get(key)||'']));
+        payload.requestId=form.dataset.requestId;payload.calculation=form.dataset.calculation||'';
+        if(file)payload.file={name:file.name,base64:base64(new Uint8Array(await file.arrayBuffer()))};
+        const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),30000);
+        let response;
+        try{response=await fetch(trialEndpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload),signal:controller.signal});}finally{clearTimeout(timer);}
+        const result=await response.json();
+        if(!response.ok||!result.ok){
+          status.textContent=result.accepted?'Заявка сохранена, но письмо пока не доставлено. Повторите отправку или свяжитесь с нами напрямую.':'Не удалось отправить заявку. Повторите отправку или свяжитесь с нами напрямую.';
+          return;
+        }
+        status.textContent='Заявка отправлена. Ответим в течение рабочего дня';
+        form.reset();delete form.dataset.requestId;delete form.dataset.calculation;
+        const selected=document.getElementById('selectedSolution');if(selected)selected.hidden=true;
+      } catch { status.textContent='Не удалось подтвердить отправку. Повторите попытку — сохранённая заявка не продублируется.'; }
+      finally {button.disabled=false;}
+      return;
+    }
     if (!file) {
       location.href = 'mailto:mark@triprobots.ru?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
       status.textContent = 'Открываем почтовую программу. Проверьте письмо и нажмите «Отправить». Если программа не открылась, напишите на mark@triprobots.ru.';

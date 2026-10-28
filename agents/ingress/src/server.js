@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import pg from 'pg';
+import { createTrialHandler } from './trial.js';
 import { maskPersonalData, restorePersonalData } from './pii.js';
 
 const { Pool } = pg;
@@ -15,6 +16,7 @@ const honeypotField = process.env.HONEYPOT_FIELD || 'website';
 const hits = new Map();
 
 app.set('trust proxy', 1);
+app.use('/api/trial', express.json({ limit: '8mb' }));
 app.use(express.json({ limit: '128kb' }));
 
 app.use((req, res, next) => {
@@ -154,6 +156,19 @@ app.post('/telegram/webhook', async (req, res) => {
     console.error('telegram ingress failed', error);
     return res.sendStatus(200);
   }
+});
+
+const trialConfigured = process.env.TRIAL_ENABLED === 'true' && process.env.DATA_REGION === 'RU' && Boolean(process.env.DATABASE_URL && process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASSWORD && process.env.SMTP_FROM);
+let trialTransport;
+if (trialConfigured) {
+  const { default: nodemailer } = await import('nodemailer');
+  const smtpPort = Number(process.env.SMTP_PORT || 465);
+  trialTransport = nodemailer.createTransport({host:process.env.SMTP_HOST,port:smtpPort,secure:smtpPort===465,requireTLS:true,auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASSWORD},tls:{minVersion:'TLSv1.2',rejectUnauthorized:true},connectionTimeout:10000,greetingTimeout:10000,socketTimeout:15000,disableFileAccess:true,disableUrlAccess:true});
+}
+app.post('/api/trial',createTrialHandler({db,configured:trialConfigured,from:process.env.SMTP_FROM,sendMail:message=>trialTransport.sendMail(message)}));
+app.use((error,req,res,next)=>{
+  if(req.path==='/api/trial')return res.status(error.type==='entity.too.large'?413:400).json({ok:false,error:'invalid_submission'});
+  next(error);
 });
 
 app.listen(port, () => console.log(`TRIPROBOTS ingress listening on :${port}`));
