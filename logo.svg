@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 120" role="img" aria-label="TRIPROBOTS">
+<svg xmlns="http://www.w3.org/2000/svg" style="--orange:#E8772E;--navy:#0F1E2E" viewBox="0 0 620 120" role="img" aria-label="TRIPROBOTS">
   <g transform="translate(4 8)">
-    <rect width="104" height="104" rx="22" fill="#4D7CFF"/>
-    <rect x="20" y="31" width="64" height="43" rx="8" fill="#FFFFFF"/>
-    <g fill="#4D7CFF">
+    <rect width="104" height="104" rx="22" fill="var(--orange)"/>
+    <rect x="20" y="31" width="64" height="43" rx="8" fill="var(--navy)"/>
+    <g fill="var(--orange)">
       <path d="M33 37h9v8h20v7H42v13c0 5 2 7 6 7 2 0 4 0 6-1v7c-3 1-6 1-9 1-8 0-12-4-12-13V52h-6v-7h6v-8z"/>
       <path d="M56 45h8v7c3-5 7-8 14-7v8c-5 0-9 1-11 4-2 2-3 5-3 9v12h-8V45z"/>
       <rect x="78" y="37" width="8" height="8" rx="1"/>
     </g>
   </g>
-  <text x="132" y="78" fill="#0A1424" font-family="Inter,Arial,Helvetica,sans-serif" font-size="54" font-weight="700" letter-spacing="-2">TRIPROBOTS</text>
+  <text x="132" y="78" fill="var(--navy)" font-family="IBM Plex Sans,Arial,sans-serif" font-size="54" font-weight="700" letter-spacing="-2">TRIPROBOTS</text>
 </svg>
