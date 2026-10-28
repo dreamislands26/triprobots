@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="TRIPROBOTS favicon">
-  <rect width="256" height="256" rx="48" fill="#4D7CFF"/>
-  <rect x="44" y="70" width="168" height="116" rx="18" fill="#FFFFFF"/>
-  <g fill="#4D7CFF">
+<svg xmlns="http://www.w3.org/2000/svg" style="--orange:#E8772E;--navy:#0F1E2E" viewBox="0 0 256 256" role="img" aria-label="TRIPROBOTS favicon">
+  <rect width="256" height="256" rx="48" fill="var(--orange)"/>
+  <rect x="44" y="70" width="168" height="116" rx="18" fill="var(--navy)"/>
+  <g fill="var(--orange)">
     <path d="M72 86h18v18h49v13H90v32c0 8 2 12 6 15 5 3 12 3 20 1v14c-6 2-12 2-18 2-10 0-17-2-22-7-5-5-7-12-7-21v-36H58v-13h14V86z"/>
     <path d="M125 104h15v12c5-8 13-12 25-12v15c-9 0-16 2-20 7-4 4-5 10-5 17v29h-15v-68z"/>
     <rect x="176" y="86" width="17" height="17" rx="1"/>
