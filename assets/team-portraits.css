@@ -1,0 +1,9 @@
+/* A single framing for the illustrated team portraits. Preserve color and full hair. */
+#team .team-grid article:nth-child(n) .avatar.cartoon-avatar {
+ display:block; width:calc(100% - 36px)!important; height:auto!important; aspect-ratio:1;
+ object-fit:contain; object-position:center!important; margin:0 auto 24px;
+ background:var(--navy-2)!important; background-image:none!important;
+ filter:none!important; border-radius:18px; box-shadow:none;
+}
+.profile-photo-wrap { aspect-ratio:1; height:auto!important; background:var(--navy-2); }
+.profile-photo { aspect-ratio:1; height:auto; object-fit:contain; object-position:center; }
