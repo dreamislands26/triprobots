@@ -29,7 +29,7 @@
     e.preventDefault();
     if (!form.reportValidity()) return;
     const data = new FormData(form);
-    const subject = 'Бесплатная проба TRIPROBOTS' + (data.get('solution') ? ` · ${data.get('solution')}` : '');
+    const subject = 'Бесплатное демо TRIPROBOTS' + (data.get('solution') ? ` · ${data.get('solution')}` : '');
     const text = ['Имя: ' + data.get('name'), 'Контакт: ' + data.get('contact'), 'Компания: ' + (data.get('company') || '—'), 'Направление: ' + data.get('area'), 'Решение: ' + (data.get('solution') || 'не выбрано'), '', data.get('message') || '', '', form.dataset.calculation || ''].join('\n');
     const file = fileInput.files[0];
     await configuration;

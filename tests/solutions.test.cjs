@@ -28,7 +28,7 @@ test('form produces a real MIME draft with solution and original attachment byte
  const button={disabled:false},status={},fileInput={files:[file],addEventListener(){},reportValidity(){}};
  const values=new Map([['name','Test'],['contact','test@example.org'],['company','Demo'],['area','Логистика'],['solution','p2'],['message','Проверка']]);
  const form={dataset:{calculation:'Расчёт'},reportValidity:()=>true,querySelector:()=>button,addEventListener:(event,handler)=>{if(event==='submit')submit=handler}};
- const context={document:{getElementById:id=>({trForm:form,formStatus:status,trFile:fileInput}[id]),createElement:()=>({click(){download=this.download}})},FormData:class{get(key){return values.get(key)}},TextEncoder,Uint8Array,Blob,btoa:x=>Buffer.from(x,'binary').toString('base64'),crypto:require('node:crypto').webcrypto,URL:{createObjectURL:b=>{blob=b;return 'blob:test'},revokeObjectURL(){}},setTimeout(){},location:{}};
+ const context={fetch:async()=>({ok:true,json:async()=>({endpoint:null})}),document:{getElementById:id=>({trForm:form,formStatus:status,trFile:fileInput}[id]),createElement:()=>({click(){download=this.download}})},FormData:class{get(key){return values.get(key)}},TextEncoder,Uint8Array,Blob,btoa:x=>Buffer.from(x,'binary').toString('base64'),crypto:require('node:crypto').webcrypto,URL:{createObjectURL:b=>{blob=b;return 'blob:test'},revokeObjectURL(){}},setTimeout(){},location:{}};
  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/trial-form.js'),'utf8'),context);
  await submit({preventDefault(){}});
  assert.equal(download,'triprobots-trial.eml');
@@ -38,4 +38,24 @@ test('form produces a real MIME draft with solution and original attachment byte
  assert.match(Buffer.from(textPart,'base64').toString('utf8'),/Решение: p2/);
  assert.match(status.textContent,/пока не отправлена/);assert.equal(button.disabled,false);
 
+});
+test('configured server form posts solution and file, displays confirmed success without mail navigation',async()=>{
+ let submit,posted,reset=false;
+ const status={},button={disabled:false},selected={hidden:false};
+ const file={name:'test.txt',size:5,arrayBuffer:async()=>new TextEncoder().encode('hello').buffer};
+ const fileInput={files:[file],addEventListener(){}};
+ const data=new Map([['name','Test'],['contact','test@example.org'],['company','Demo'],['area','Logistics'],['message','Test'],['solution','p2']]);
+ const form={dataset:{calculation:'Example'},reportValidity:()=>true,querySelector:()=>button,reset(){reset=true;},addEventListener:(event,handler)=>{if(event==='submit')submit=handler;}};
+ const location={origin:'https://triprobots.ru',href:'unchanged'};
+ const context={document:{getElementById:id=>({trForm:form,formStatus:status,trFile:fileInput,selectedSolution:selected}[id])},fetch:async(url,options)=>{
+  if(!options?.method)return {ok:true,json:async()=>({endpoint:'https://forms.example/api/trial'})};
+  posted=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true,accepted:true})};
+ },FormData:class{get(key){return data.get(key);}},TextEncoder,Uint8Array,btoa:x=>Buffer.from(x,'binary').toString('base64'),crypto:require('node:crypto').webcrypto,URL,AbortController,setTimeout,clearTimeout,location};
+ vm.runInNewContext(fs.readFileSync(path.join(root,'assets/trial-form.js'),'utf8'),context);
+ await submit({preventDefault(){}});
+ assert.equal(posted.solution,'p2');assert.equal(posted.file.base64,'aGVsbG8=');assert.equal(location.href,'unchanged');assert.equal(status.textContent,'Заявка отправлена. Ответим в течение рабочего дня');assert.equal(reset,true);assert.equal(selected.hidden,true);assert.equal(button.disabled,false);
+});
+test('reading-hours scenario uses hours directly, independent of an obsolete minutes field',()=>{
+ const calc=calculate(),s=solutions.find(x=>x.id==='p5');
+ for(const min of [0,1,60,999])assert.equal(calc({...s,min}).saved,7);
 });

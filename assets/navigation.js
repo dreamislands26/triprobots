@@ -8,8 +8,12 @@
  burger.type='button';burger.className='menu-toggle';burger.setAttribute('aria-label','Открыть меню');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-controls','site-menu');burger.innerHTML='<span aria-hidden="true">☰</span>';
  wrap.append(burger);
  const dialog=document.createElement('dialog');dialog.id='site-menu';dialog.className='mobile-menu';dialog.setAttribute('aria-label','Навигация сайта');
- dialog.innerHTML=`<div class="mobile-menu-head"><a href="/" aria-label="TRIPROBOTS — главная"><img src="/logo.svg?v=original-20261029" alt="TRIPROBOTS" width="180" height="35"></a><button type="button" class="menu-close" aria-label="Закрыть меню">×</button></div><nav aria-label="Основное меню"><a href="${section('solutions')}">Решения</a><a href="${section('integrations')}">Интеграции</a><a href="/cases/">Проекты</a><a href="/articles/">Материалы</a><details><summary>Роботизация</summary><div class="mobile-submenu"><a href="/restaurants/">Рестораны и кафе</a><a href="/hotels/">Отели и апартаменты</a><a href="/industry/">Производство и склады</a><a href="/cleaning/">Коммерческая уборка</a></div></details><a href="${section('pricing')}">Цены</a><a href="${section('approach')}">Как работаем</a><a href="${section('team')}">Команда</a></nav><a class="btn mobile-trial" href="${section('contact')}">Бесплатная проба</a>`;
+ dialog.innerHTML=`<div class="mobile-menu-head"><a href="/" aria-label="TRIPROBOTS — главная"><img src="/logo.svg?v=original-20261029" alt="TRIPROBOTS" width="180" height="35"></a><button type="button" class="menu-close" aria-label="Закрыть меню">×</button></div><nav aria-label="Основное меню"><a href="${section('solutions')}">Решения</a><a href="${section('integrations')}">Интеграции</a><a href="/cases/">Проекты</a><a href="/articles/">Материалы</a><details><summary>Роботизация</summary><div class="mobile-submenu"><a href="/restaurants/">Рестораны и кафе</a><a href="/hotels/">Отели и апартаменты</a><a href="/industry/">Производство и склады</a><a href="/cleaning/">Коммерческая уборка</a></div></details><a href="${section('pricing')}">Цены</a><a href="${section('approach')}">Как работаем</a><a href="${section('team')}">Команда</a></nav><a class="btn mobile-trial" href="${section('contact')}">Бесплатное демо</a>`;
  document.body.append(dialog);
+ const bottomDemo=document.createElement('a');
+ bottomDemo.className='btn bottom-demo';bottomDemo.href=section('contact');bottomDemo.textContent='Бесплатное демо';
+ bottomDemo.setAttribute('aria-label','Бесплатное демо — перейти к форме');
+ document.body.append(bottomDemo);
  let previousOverflow='';
  function close(){if(dialog.open)dialog.close();}
  burger.addEventListener('click',()=>{

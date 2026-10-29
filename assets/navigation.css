@@ -46,3 +46,15 @@
  .mobile-menu { scroll-behavior:auto; }
 }
 @media(min-width:900px) { .site-header .nav { display:flex; } }
+/* Keep every desktop navigation item on the same visual baseline. */
+@media(min-width:900px) {
+ .site-header .nav { align-items:center; }
+ .site-header .nav > a,.site-header .nav > .lob-dropdown { display:flex; align-items:center; min-height:44px; }
+ .site-header .desktop-dropdown-toggle { display:flex; align-items:center; padding:0; min-height:44px; line-height:1.5; }
+}
+.bottom-demo { display:none; }
+@media(max-width:899px) {
+ .bottom-demo { display:flex; position:fixed; z-index:90; left:16px; right:16px; bottom:max(12px,env(safe-area-inset-bottom)); min-height:48px; white-space:nowrap; box-shadow:0 4px 20px color-mix(in srgb,var(--navy) 25%,transparent); }
+ body { padding-bottom:84px; }
+ #contact { scroll-margin-bottom:90px; }
+}

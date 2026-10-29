@@ -36,7 +36,7 @@ export function createTrialHandler({db,sendMail,configured,from}) {
    const row=rows[0];
    if(row.email_status!=='sent'){
     try{
-     const info=await sendMail({from,to:'mark@triprobots.ru',subject:'Бесплатная проба TRIPROBOTS'+(row.solution?' · '+row.solution:''),text:[`Имя: ${row.name}`,`Контакт: ${row.contact}`,`Компания: ${row.company}`,`Направление: ${row.area}`,`Решение: ${row.solution}`,'',row.message,'',row.calculation].join('\n'),attachments:row.file_content?[{filename:row.file_name,content:row.file_content,contentType:'application/octet-stream'}]:[],disableFileAccess:true,disableUrlAccess:true});
+     const info=await sendMail({from,to:'mark@triprobots.ru',subject:'Бесплатное демо TRIPROBOTS'+(row.solution?' · '+row.solution:''),text:[`Имя: ${row.name}`,`Контакт: ${row.contact}`,`Компания: ${row.company}`,`Направление: ${row.area}`,`Решение: ${row.solution}`,'',row.message,'',row.calculation].join('\n'),attachments:row.file_content?[{filename:row.file_name,content:row.file_content,contentType:'application/octet-stream'}]:[],disableFileAccess:true,disableUrlAccess:true});
      if(!info.accepted?.some(address=>String(address).toLowerCase()==='mark@triprobots.ru'))throw new Error('mail_not_accepted');
      await client.query("update trial_submissions set email_status='sent',email_sent_at=now(),email_message_id=$2 where request_id=$1",[d.requestId,info.messageId||null]);
     }catch{
