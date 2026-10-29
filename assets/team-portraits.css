@@ -1,5 +1,5 @@
-/* A single framing for the illustrated team portraits. Preserve color and full hair. */
-#team .team-grid article:nth-child(n) .avatar.cartoon-avatar {
+/* A single framing for the real team photographs. Preserve color and full hair. */
+#team .team-grid article:nth-child(n) .avatar.real-portrait {
  display:block; width:calc(100% - 36px)!important; height:auto!important; aspect-ratio:1;
  object-fit:contain; object-position:center!important; margin:0 auto 24px;
  background:var(--navy-2)!important; background-image:none!important;

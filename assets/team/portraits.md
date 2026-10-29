@@ -1,9 +1,5 @@
-# Team portraits — v1
+# Team photographs — v2
 
-Generated with the built-in image-generation tool from the three portraits supplied by the user. Website assets are 768 × 768 WebP; all three use the same editorial cartoon rendering, navy background, light and head-and-shoulders framing. No logos or lettering were added. Original photographs remain unchanged.
+Current assets: `mark-photo-v2.webp`, `oleg-photo-v2.webp`, `anastasia-photo-v2.webp`, each 768 × 768. These use the real photographs supplied by the user. The image tool was used only for background-extraction masks. Final subject pixels come from the original photographs, with resizing/cropping and alpha compositing on #16293C; generated facial pixels are not used.
 
-- `assets/team/mark-cartoon-v1.webp`
-- `assets/team/oleg-cartoon-v1.webp`
-- `assets/team/anastasia-cartoon-v1.webp`
-
-Prompt set: preserve the recognizable identity and age of each reference person; create a mature professional 2D editorial cartoon with clean outlines, softly shaded volumes, warm skin tones, a deep navy #16293C background and centered shoulders. Keep Mark's white open-collar shirt, Oleg's black crew-neck shirt without the clothing logo, Anastasia's cobalt blue blouse. Remove Anastasia's hands from her face and use an upright business portrait pose. No text, watermarks, props or exaggerated caricature. Mark's generated portrait was the shared style reference for the other two assets.
+The user approved uploading these three real portraits to the public dreamislands26/triprobots repository. Former cartoon-v1 files are retained as unused history.
