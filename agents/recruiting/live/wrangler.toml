@@ -1,0 +1,8 @@
+name = "triprobots-recruiting-live"
+main = "worker.mjs"
+compatibility_date = "2026-11-06"
+workers_dev = true
+preview_urls = false
+
+[vars]
+TELEGRAM_CHANNELS = "fmcg_job"
