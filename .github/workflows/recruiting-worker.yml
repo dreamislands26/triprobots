@@ -16,5 +16,5 @@ jobs:
           node-version: '22'
       - run: npx --yes wrangler@4 deploy --config agents/recruiting/live/wrangler.toml
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFLAREAPITOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 8b2e6834bdb06716ef7241cf15c2de54
