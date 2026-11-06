@@ -5,4 +5,4 @@ workers_dev = true
 preview_urls = false
 
 [vars]
-TELEGRAM_CHANNELS = "fmcg_job"
+TELEGRAM_CHANNELS = "fmcg_job,bc_atlanty"
