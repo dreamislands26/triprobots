@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мониторинг запросов · TRIPROBOTS</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f2ec;color:#0f1e2e;font:16px/1.55 system-ui}main{max-width:900px;margin:auto;padding:36px 20px}header{border-top:5px solid #e8772e;padding-top:16px}a{color:inherit}h1{font-size:clamp(30px,6vw,54px);line-height:1.1;margin:18px 0}form,section{background:#fff;padding:24px;border-radius:14px;margin:20px 0}label{display:block;margin:12px 0;font-weight:600}input,textarea{width:100%;display:block;font:inherit;padding:10px;border:1px solid #9ba4ac;border-radius:6px}button{font:inherit;padding:9px 15px;border:0;border-radius:6px;margin:4px;background:#0f1e2e;color:white;cursor:pointer}button:first-of-type{background:#e8772e;color:#0f1e2e}li{margin:8px 0}small{display:block}
+</style>
+<main><header><a href="/">TRIPROBOTS</a><h1>Мониторинг запросов</h1><p>Задайте, что ищете, и проверьте границы поиска на примерах сообщений.</p></header>
+<form id="scope"><h2>Настройка поиска</h2>
+<label>Название запроса<input id="name" value="Заказы на подбор персонала" required></label>
+<label>Искать слова и фразы через запятую<input id="include" value="кадровое агентство, отдать на подбор" required></label>
+<label>География, если важна<input id="region" placeholder="Москва, Московская область"></label>
+<label>Исключить слова и фразы<input id="exclude" value="ищу работу, массовый подбор"></label>
+<label>Сообщения для проверки, по одному на строку<textarea id="messages" rows="7" required></textarea></label>
+<button type="submit">Проверить запрос</button><button id="sample" type="button">Вставить примеры</button>
+<small>Демо проверяет совпадения по тексту. Сообщения обрабатываются в браузере. Подключение чатов и автоматический мониторинг пока недоступны.</small>
+</form><section aria-live="polite"><h2 id="title">Результаты</h2><p id="count">Добавьте сообщения и запустите проверку.</p><ul id="results"></ul></section></main>
+<script>
+const el=id=>document.getElementById(id);
+const norm=s=>s.toLocaleLowerCase('ru').replaceAll('ё','е').replace(/\s+/g,' ').trim();
+const terms=s=>s.split(',').map(norm).filter(Boolean);
+el('sample').onclick=()=>{el('messages').value=['Москва: порекомендуйте кадровое агентство для поиска коммерческого директора.','Казань: готовы отдать на подбор руководителя продаж.','Ищу работу в Москве, раньше работал в кадровом агентстве.'].join('\n')};
+el('scope').onsubmit=e=>{
+e.preventDefault();
+const include=terms(el('include').value),region=terms(el('region').value),exclude=terms(el('exclude').value);
+const rows=el('messages').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+const hits=rows.filter(row=>{const t=norm(row);return include.some(v=>t.includes(v))&&(!region.length||region.some(v=>t.includes(v)))&&!exclude.some(v=>t.includes(v))});
+el('title').textContent=el('name').value;el('count').textContent='Совпадений: '+hits.length+' из '+rows.length;
+el('results').replaceChildren(...hits.map(row=>{const li=document.createElement('li');li.textContent=row;return li}));
+};
+</script></html>
