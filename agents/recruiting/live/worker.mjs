@@ -12,7 +12,8 @@ export default {
    const unavailable=(reason)=>Response.json({error:'source_unavailable',reason},{status:502,headers:{'Cache-Control':'no-store'}});
    let phase='telegram_fetch';
    try {
-     const page=await fetch('https://t.me/s/'+channel,{redirect:'error',signal:AbortSignal.timeout(8000)});
+     const page=await fetch('https://t.me/s/'+channel,{redirect:'manual',signal:AbortSignal.timeout(8000)});
+     if (page.status >= 300 && page.status < 400) return unavailable('telegram_redirect_'+page.status);
      if (!page.ok) return unavailable('telegram_http_'+page.status);
      phase='telegram_parse';
      const body=new HTMLRewriter().on('.tgme_widget_message[data-post]',{element(e){
@@ -25,6 +26,9 @@ export default {
      await body.text();
      if(!items.length) return unavailable('telegram_preview_has_no_posts');
      return Response.json({scanned:items.length,results:items.map(({ref,text})=>({url:'https://t.me/'+ref,text,kind:screen({text})})).filter(x=>x.kind!=='exclude')},{headers:{'Cache-Control':'no-store'}});
-   } catch { return unavailable(phase); }
+   } catch (error) {
+     if (phase==='telegram_fetch') return unavailable(['TimeoutError','AbortError'].includes(error?.name) ? 'telegram_timeout' : 'telegram_network_error');
+     return unavailable(phase);
+   }
  }
 };
